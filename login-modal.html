@@ -1,0 +1,43 @@
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-body px-5">
+        <h2 id='login'>Login</h3>
+        <form style="margin-top: 10px;">
+          <div class="form-group">
+            
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+            onfocusout="checkEmailLogin()"
+              type="email"
+              class="form-control"
+              id="emailLogin"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small  id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordLogin"
+              placeholder="Password"
+            />
+          </div>
+          <div style="margin-bottom:10px;">
+          <a class="forgotpassword" href='/email'>Forgot Password ?</a><br>
+        </div>
+          <button id="loginButton" onClick="loginMe()" type="button" class="btn btn-primary">
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

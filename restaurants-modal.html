@@ -1,0 +1,104 @@
+<!-- this is a structure of Bootstrap Modal -->
+
+
+<style>
+::-webkit-scrollbar {
+background: var(--home--background);
+  border-radius: 0px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 5px var(--home--background);
+  display: none;
+  background: var(--home--background);
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--home--background);
+  border-radius: 0px;
+  display: none;
+}
+</style>
+
+
+
+<div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog"  style="max-width:55%; min-width:28%; "  role="document">
+        <div class="modal-content" style="border-radius: 25px; height: 1200px; overflow: hidden scroll;">
+    
+            
+            <div class="modal-body " style="padding:0px;">
+                <div class="row text-center">
+                    <div class="col-12" style="height:375px; overflow: hidden;">
+              
+                        <img style="width: 100%; z-index: 3000; margin:0px; position: relative; top:0px; border-radius: 25px; border:0px" class="img-fluid img-thumbnail" id="restaurantThumbnail">
+                                     
+                    </div>
+                   
+                  
+                </div>
+                <div class="col-12" style="padding: 15px;">
+                <div >
+                <h3 class="modal-title text-dark" id="restaurantTitle">Modal title</h3>
+
+
+                <div class="col-8" style="padding: 0px;">
+                    <p style="margin-bottom: 80px; line-height: 1.6; padding-top:5px ;" id="description"></p>
+                </div>
+            </div>
+                <div style="position: absolute; top:25px; right:60px;">
+                    <table class="table table-hover table-borderless table-responsive table-lg">
+                        <tr>
+                            <td><span class="badge badge-danger font-weight-bold" id="badgeGenre">Type</span></td>
+                            <td id="type"></td>
+                        </tr>
+                
+                        <tr>
+                            <td><span class="badge badge-danger font-weight-bold" id="badgeGenre">Availability</span></td>
+                            <td id="availability"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button   button" class="btn btn-danger" id="buy" onClick="buyTicket()">Learn more</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <video id="associatedImage1" width="320" height="240" controls>
+                    <source type="video/mp4" >
+                </video>
+                <h4 class="videoTitle" >Vlogs and Videos</h4>
+                <div>
+                <div>
+                    <div  class="player">
+                    <iframe  width = "1200px" height="525px" frameborder="0" allowfullscreen id="trailer"></iframe>
+                    </div>
+                </div>
+               
+                </div>
+                
+                <span style="text-align: center;"><h4 class="modal-title" id="review" >     
+                </h4>
+                <div >
+                <rating  id="rating">
+            </rating>
+
+            <p id="outof">out of 5</p>
+        </div>
+                <button type="button"  class="newComment btn btn-primary" data-toggle="modal" data-target="#newCommentModal" style="position:absolute; right: 55px; bottom:13px;"	id = "newcomments" data-dismiss="modal" onClick="newComment()">New Comment</button>
+	           
+            </span>
+            </div>
+            <div id="commentArea" class="modal-body">
+                <div id="emptyComment">No review yet. Create one now</div>
+                <div class="row px-5" id="commentBody"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

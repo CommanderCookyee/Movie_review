@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    var picture, telephone, username, token;
+    token = sessionStorage.getItem("token");
+  </script>
+</head>
+
+<body id="body" onload="loadedFav();" >
+
+ 
+
+  <!-- Include top navigation here -->
+  <div class="sidebar">
+    <!-- SIDE BAR NAV -- Brand  -->
+    <div id="logo" class="logo-details">
+      <i id="btnOpen" class="bx bxs-chalkboard"></i>
+      <a class="logo_name" href="index.html" style="text-decoration: none">OISHII</a>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+
+    <!-- SIDE BAR NAV -->
+
+    <ul class="nav-list">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Search</span>
+      </li>
+      <li id="nowMenu">
+        <a href="/index.html" id="now" onClick="listNowShowingRestaurants()">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Restaurants</span>
+        </a>
+        <span class="tooltip">Restaurants</span>
+      </li>
+      <li>
+        <a href="#" id="aboutMenu" data-toggle="modal" data-target="#messageModal">
+          <i id="about" class="bx bx-info-circle"></i>
+          <span class="links_name">About</span>
+        </a>
+        <span class="tooltip">About</span>
+      </li>
+      <li>
+        <a href="">
+          <i class="bx bx-user" id="editMenu"></i>
+          <span class="links_name">Profile</span>
+        </a>
+        <span class="tooltip">Profile</span>
+      </li>
+      <li>
+        <a href="index.html?event=true" onclick = "loadedFav()" id="Favourites">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Favourites</span>
+        </a>
+        <span class="tooltip">Favourites</span>
+    </li>
+      <li>
+        <a href="#" id="mailMenu" data-toggle="modal" data-target="#mailModal">
+            <i class="bx bx-chat" id="mailMenu"></i>
+            <span class="links_name">Contact Us</span>
+        </a>
+        <span class="tooltip">Contact Us</span>
+    </li>
+      <li class="profile">
+        <img  style="border-radius: 6px; height: 120px; width: 250px; left:0px;   overflow: hidden;"id="targetF"/>
+        <div class="profile-details">
+          <i class="bx bx-log-out" id="logout" onclick="logout()"></i>
+         
+          <div class="name_job">
+            <div id="username" class="name"></div>
+            <div id="user_id"></div>
+          </div>
+        </div>
+      </li>     
+    </ul>
+  </div>
+
+  <div class="container" style="padding: 0px;"><div>
+
+
+  <div>
+          <span style="z-index: 99999;" class="themes">
+              <i class='bx bx-moon nav__icon' id="sun"></i>
+              <i class='bx bx-bell nav__icon'></i>
+             
+            </span>
+          </span>
+      </div>
+  </div>
+
+  
+  <div style="max-width: 100%; color:white; height: 500px; overflow: hidden; right:0px; position:relative; text-align: center; z-index: 1;">
+  <img style=" border-radius: 0px; filter: brightness(95%);" id="targetE" />
+  <div style="position: absolute; bottom: 110px; left: 250px; font-size: 18px; font-weight: bold;">Profile</div> 
+  <div style="position: absolute; bottom: 16px; left: 245px; font-size: 75px; font-weight: bold;" id="username1" ></div> 
+  <img style="position: absolute; bottom: 16px; left: 25px; height: 200px; width: 200px; overflow: hidden; border-radius: 50%;"
+                    id="target" />
+</div>
+<div class="profilebox">
+<h1 style="font-weight: bold;">Profile</h1>
+
+    <div  id="parent">
+      <div class="form-group ">
+        
+  
+        <label class="profileInput" for="telephone">Telephone</label>
+        <input type="text" class="form-control" id="telephone" placeholder="Telephone" />
+        <label class="profileInput" for="myinput" class="mt-5">Avatar</label><br />
+        <input class="button" id="myinput" type="file" onchange="encode();" /><br />
+        <label class="profileInput" for="mybannerinput" class="mt-5">Banner</label><br />
+        <input class="button " id="mybannerinput" type="file" onchange="encode1();" />
+        <div style="height: 50px;"></div>
+        <br/>
+        <button onclick="update();" type="button" class="btn btn-danger">
+          Update
+        </button>
+        <button class="btn btn-danger" id="deleteAccount" onclick="deleteAccount()">Delete Account</button>
+      </div>
+    </div>
+
+  
+        
+        
+                   
+
+            
+      </div>
+  </div>
+  </div>
+</div>
+
+</div>
+
+    
+ 
+<div w3-include-html="edit-comments-modal.html"></div>
+<div w3-include-html="Logout-modal.html"></div>
+<div w3-include-html="message-modal.html"></div>
+<div w3-include-html="fail-modal.html"></div>
+<div w3-include-html="mail-modal.html"></div>
+  <div w3-include-html="success-modal.html"></div>
+
+</body>
+<script src="js/darkmode.js"></script>
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>
+  //to bring in other HTML on the fly into this page
+  w3.includeHTML();
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/86ec7c1143.js"></script>
+
+<script src="js/register.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/main1.js"></script>
+<script src="js/checktoken.js"></script>
+<script src="js/loadProfile.js"></script>
+<script src="js/updateProfile.js"></script>
+<script src="js/redirect.js"></script>
+<script src="js/login.js"></script>
+
+
+<script src="js/loadProfile1.js"></script>
+
+
+</html>

@@ -1,0 +1,29 @@
+<div class="modal fade" id="newCommentModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body px-5">
+
+      
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" id="submitComment" onClick="addComment()">Submit</button>
+                <h3 class="reviewContributionTitle"> Write a Review</h3>
+                <img src="images/starY.png" class="pop" value="1" onmouseover="rateIt(this)" />
+                <img src="images/starY.png" class="pop" value="2" onmouseover="rateIt(this)" />
+                <img src="images/starY.png" class="pop" value="3" onmouseover="rateIt(this)" />
+                <img src="images/starY.png" class="pop" value="4" onmouseover="rateIt(this)" />
+                <img src="images/starY.png" class="pop" value="5" onmouseover="rateIt(this)" /><br>
+                <label style="margin-top: 5px;" for="starY.png">Tap a Star to Rate</label>
+            </div>
+                <form id="commentForm">
+                    <div class="row" text-center id="commentBody">
+                        <input style='border-right:none; border-left:none; ;border-radius: 0px;' type="text" placeholder="Nickname" id="nickname" class="form-control" required>
+                        <textarea style='border-right:none; border-left:none; border-bottom: none; border-top: .5px;' id="userComments" placeholder="Review (Optional)" required class="form-control form-rounded" rows="3" cols="100%"></textarea>
+                        
+                    </div>
+
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
